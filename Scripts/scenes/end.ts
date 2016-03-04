@@ -1,4 +1,17 @@
-// LEFT_CAVE SCENE
+/*
+Kateryna Bilokhvost
+Last modified by:Kateryna Bilokhvost
+Last Modified date: March 4, 2016
+Description: Dice Rolling Game
+Revision History:
+ Commit 1: Initial Commit
+ Commit 2: added list of assets to the game.ts
+ Commit 3: Added the initialized bitmap array
+ Commit 4: Added tha random generation functionality
+ Commit 5: updated labels
+
+*/
+// END SCENE
 module scenes {
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
@@ -19,7 +32,7 @@ module scenes {
             this._endLabel = new objects.Label(
                 "END SCENE", "60px Consolas",
                 "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y);
+                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
             this.addChild(this._endLabel);
             
             // add the BACK button to the OVER scene

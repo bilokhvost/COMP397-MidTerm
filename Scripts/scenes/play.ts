@@ -7,7 +7,9 @@ Revision History:
  Commit 1: Initial Commit
  Commit 2: added list of assets to the game.ts
  Commit 3: Added the initialized bitmap array
- 
+ Commit 4: Added tha random generation functionality
+ Commit 5: updated labels
+
 */
 // PLAY SCENE
 module scenes {
@@ -16,15 +18,8 @@ module scenes {
         //   private _playLabel: objects.Label;
         private _startOverButton: objects.Button;
         private _dices: createjs.Bitmap[];
-        private _diceOneText: objects.Label ;
+        private _diceOneText: objects.Label;
         private _diceTwoText: objects.Label;
-        
-         private _one = 0;
-        private _two = 0;
-        private _three = 0;
-        private _four = 0;
-        private _five = 0;
-        private _six = 0;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -44,16 +39,24 @@ module scenes {
             console.log("Add button");
             this.addChild(this._startOverButton);
             this._startOverButton.on("click", this._startOverButtonClick, this);
-            
-            /*  this._diceOneText = new objects.Label(
-                "kfkf",
-                "18px Consolas",
-                "#ff0000",
-                146,
-                252
-                );
-        
-            this.addChild(this._diceOneText);*/
+
+            this._diceOneText = new objects.Label(
+                "1",
+                "20px Consolas",
+                "#4c4c4c",
+                155,
+                272, false
+            );
+            this.addChild(this._diceOneText);
+
+            this._diceTwoText = new objects.Label(
+                "1",
+                "20px Consolas",
+                "#4c4c4c",
+                455,
+                272, false
+            );
+            this.addChild(this._diceTwoText);
             
          
             
@@ -70,11 +73,7 @@ module scenes {
         }
         //PRIVATE METHODS
         
-        private _checkRange(value: number, lowerBounds: number, upperBounds: number) {
-            return (value >= lowerBounds && value <= upperBounds) ? value : -1;
-        }
-        
-        
+              
         // initialize the array of dicers
         private _initializeBitmapArray() {
             this._dices = new Array<createjs.Bitmap>();
@@ -95,29 +94,54 @@ module scenes {
             for (var diceRoll = 0; diceRoll < 2; diceRoll++) {
                 outCome[diceRoll] = Math.floor(Math.random() * 6) + 1;
                 switch (outCome[diceRoll]) {
+
                     case 1:
                         betLine[diceRoll] = "DiceOne";
-                        this._one++;
+                        if (diceRoll == 0) {
+                            this._diceOneText.text = "1";
+                        }
+                        else
+                            this._diceTwoText.text = "1";                   
                         break;
-                    case 2: 
+                    case 2:
                         betLine[diceRoll] = "DiceTwo";
-                        this._two++;
+                         if (diceRoll == 0) {
+                            this._diceOneText.text = "2";
+                        }
+                        else
+                            this._diceTwoText.text = "2";  
                         break;
                     case 3:
                         betLine[diceRoll] = "DiceThree";
-                        this._three++;
+                           if (diceRoll == 0) {
+                            this._diceOneText.text = "3";
+                        }
+                        else
+                            this._diceTwoText.text = "3"; 
                         break;
                     case 4: // 12.3% probability
                         betLine[diceRoll] = "DiceFour";
-                        this._four++;
+                           if (diceRoll == 0) {
+                            this._diceOneText.text = "4";
+                        }
+                        else
+                            this._diceTwoText.text = "4";                       
                         break;
                     case 5: //  7.7% probability
                         betLine[diceRoll] = "DiceFive";
-                        this._five++;
+                           if (diceRoll == 0) {
+                            this._diceOneText.text = "5";
+                        }
+                        else
+                            this._diceTwoText.text = "5";                 
                         break;
                     case 6: //  4.6% probability
                         betLine[diceRoll] = "DiceSix";
-                        this._six++;
+                           if (diceRoll == 0) {
+                            this._diceOneText.text = "6";
+                        }
+                        else
+                            this._diceTwoText.text = "6"; 
                         break;
                 }
             }
@@ -129,11 +153,15 @@ module scenes {
         private _startOverButtonClick(event: createjs.MouseEvent): void {
             console.log("Roll Over Again");
             var bitmap: string[] = this._rollDice();
-                for (var dice: number = 0; dice < 2; dice++) {                    
-                    this._dices[dice].image = assets.getResult(bitmap[dice]);
-                }
-            //   this._diceOneText.text = "1";
-             //   this._diceTwoText.text ="1";
+            for (var dice: number = 0; dice < 2; dice++) {
+                this._dices[dice].image = assets.getResult(bitmap[dice]);
+
+
+            }
+
+         //  this._diceOneText.text = "1";
+
+           // this._diceTwoText.text = "1";
 
         }
     }

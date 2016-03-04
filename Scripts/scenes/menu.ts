@@ -1,14 +1,16 @@
-﻿ /*
- Kateryna Bilokhvost
- Last modified by:Kateryna Bilokhvost
- Last Modified date: March 4, 2016
- Description: Dice Rolling Game
- Revision History:
-  Commit 1: Initial Commit
-  Commit 2: added list of assets to the game.ts
-  Commit 3: Added the initialized bitmap array
+﻿/*
+Kateryna Bilokhvost
+Last modified by:Kateryna Bilokhvost
+Last Modified date: March 4, 2016
+Description: Dice Rolling Game
+Revision History:
+ Commit 1: Initial Commit
+ Commit 2: added list of assets to the game.ts
+ Commit 3: Added the initialized bitmap array
+ Commit 4: Added tha random generation functionality
+Commit 5: updated labels
  
- */
+*/
 // MENU SCENE
 module scenes {
     export class Menu extends objects.Scene {
@@ -29,7 +31,7 @@ module scenes {
             this._menuLabel = new objects.Label(
                 "MENU SCENE", "60px Consolas",
                 "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y);
+                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
             this.addChild(this._menuLabel);
             
             
