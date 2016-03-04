@@ -3,6 +3,17 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
+/*
+Kateryna Bilokhvost
+Last modified by:Kateryna Bilokhvost
+Last Modified date: March 4, 2016
+Description: Dice Rolling Game
+Revision History:
+ Commit 1: Initial Commit
+ Commit 2: added list of assets to the game.ts
+ Commit 3: Added the initialized bitmap array
+
+*/
 // MENU SCENE
 var scenes;
 (function (scenes) {
@@ -30,14 +41,14 @@ var scenes;
         Menu.prototype.update = function () {
         };
         //EVENT HANDLERS ++++++++++++++++++++
-        // LEFT_CAVE Button click event handler
+        // START Button click event handler
         Menu.prototype._startButtonClick = function (event) {
-            // Switch to the LEFT_CAVE Scene
+            // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             changeScene();
         };
         return Menu;
-    }(objects.Scene));
+    })(objects.Scene);
     scenes.Menu = Menu;
 })(scenes || (scenes = {}));
 //# sourceMappingURL=menu.js.map

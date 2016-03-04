@@ -1,4 +1,15 @@
-﻿// MENU SCENE
+﻿ /*
+ Kateryna Bilokhvost
+ Last modified by:Kateryna Bilokhvost
+ Last Modified date: March 4, 2016
+ Description: Dice Rolling Game
+ Revision History:
+  Commit 1: Initial Commit
+  Commit 2: added list of assets to the game.ts
+  Commit 3: Added the initialized bitmap array
+ 
+ */
+// MENU SCENE
 module scenes {
     export class Menu extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++

@@ -1,3 +1,14 @@
+/*
+Kateryna Bilokhvost
+Last modified by:Kateryna Bilokhvost
+Last Modified date: March 4, 2016
+Description: Dice Rolling Game
+Revision History:
+ Commit 1: Initial Commit
+ Commit 2: added list of assets to the game.ts
+ Commit 3: Added the initialized bitmap array
+
+*/
 /// <reference path = "_reference.ts" />
 // global variables
 var assets;
@@ -13,7 +24,13 @@ var end;
 var assetData = [
     // Add your Assets here
     { id: "StartButton", src: "../../Assets/images/StartButton.png" },
-    { id: "StartOverButton", src: "../../Assets/images/StartOverButton.png" }
+    { id: "StartOverButton", src: "../../Assets/images/StartOverButton.png" },
+    { id: "DiceOne", src: "../../Assets/images/DiceOne.png" },
+    { id: "DiceTwo", src: "../../Assets/images/DiceTwo.png" },
+    { id: "DiceThree", src: "../../Assets/images/DiceThree.png" },
+    { id: "DiceFour", src: "../../Assets/images/DiceFour.png" },
+    { id: "DiceFive", src: "../../Assets/images/DiceFive.png" },
+    { id: "DiceSix", src: "../../Assets/images/DiceSix.png" }
 ];
 function preload() {
     assets = new createjs.LoadQueue();
