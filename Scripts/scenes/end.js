@@ -3,7 +3,20 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-// LEFT_CAVE SCENE
+/*
+Kateryna Bilokhvost
+Last modified by:Kateryna Bilokhvost
+Last Modified date: March 4, 2016
+Description: Dice Rolling Game
+Revision History:
+ Commit 1: Initial Commit
+ Commit 2: added list of assets to the game.ts
+ Commit 3: Added the initialized bitmap array
+ Commit 4: Added tha random generation functionality
+ Commit 5: updated labels
+
+*/
+// END SCENE
 var scenes;
 (function (scenes) {
     var End = (function (_super) {

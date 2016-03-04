@@ -13,6 +13,8 @@ Revision History:
  Commit 2: added list of assets to the game.ts
  Commit 3: Added the initialized bitmap array
  Commit 4: Added tha random generation functionality
+ Commit 5: updated labels
+
 */
 // PLAY SCENE
 var scenes;
